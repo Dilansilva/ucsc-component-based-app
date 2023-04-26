@@ -8,6 +8,7 @@ import './App.css'
 function App() {
   const [password,setPassword] = useState(null);
   const [username,setUsername] = useState(null);
+  const [credentails,setCredentials] = useState(null);
 
   const submitCredentails = () => {
     fetch('http://localhost:3000/login', {
@@ -22,15 +23,17 @@ function App() {
     })
        .then((response) => response.json())
        .then((data) => {
-          console.log("kmkknk",data);
-          // Handle data
+          console.log("kmkknk",data.message);
+          if(data.message === "loginsucess"){
+            window.location.replace("http://youtube.com");
+          }
+          setCredentials(data.message)
        })
        .catch((err) => {
           console.log(err.message);
        });
   }
 
-  const [credentails,setCredentials] = useState();
   return (
     <div className='textCenter'>
       <h1>Login</h1>
@@ -47,7 +50,7 @@ function App() {
       <Button type="primary" disabled={username && password ? false : true} onClick={submitCredentails}>
         Login
       </Button>
-        <small className='errorMsg'>{credentails ? null : 'wrong password or username'}</small>
+        <small className='errorMsg'>{credentails ? credentails : null}</small>
       </Space>
     </div>
   );
