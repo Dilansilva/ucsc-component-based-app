@@ -24,7 +24,6 @@ function Login() {
     })
        .then((response) => response.json())
        .then((data) => {
-          console.log("kmkknk",data.message);
           if(data.message === "loginsucess"){
             window.location.replace("https://ant.design/");
           }
