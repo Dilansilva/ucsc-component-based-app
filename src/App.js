@@ -26,7 +26,7 @@ function App() {
        .then((data) => {
           console.log("kmkknk",data.message);
           if(data.message === "loginsucess"){
-            window.location.replace("http://youtube.com");
+            window.location.replace("https://ant.design/");
           }
           setCredentials(data.message)
        })
