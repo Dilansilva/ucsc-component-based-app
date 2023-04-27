@@ -51,6 +51,7 @@ function Login() {
         Login
       </Button>
         <small className='errorMsg'>{credentails ? credentails : null}</small>
+          <a href='/signup'>Don't have account?</a>
       </Space>
     </div>
   );
