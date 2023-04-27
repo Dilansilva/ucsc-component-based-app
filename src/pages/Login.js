@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { EyeTwoTone,EyeInvisibleOutlined  } from '@ant-design/icons';
 import { Input, Space,Button } from 'antd';
 
-import './App.css'
+import "../App.css"
 
 function Login() {
 
