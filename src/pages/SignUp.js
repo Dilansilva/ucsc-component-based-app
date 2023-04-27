@@ -12,7 +12,7 @@ function SignUp() {
   const [credentails,setCredentials] = useState(null);
 
   const submitCredentails = () => {
-    fetch('https://kasper-backend.onrender.com/singin', {
+    fetch('https://kasper-backend.onrender.com/signin', {
       method: 'POST',
       body: JSON.stringify({
         "username":username,
@@ -24,8 +24,8 @@ function SignUp() {
     })
        .then((response) => response.json())
        .then((data) => {
-          if(data.message === "loginsucess"){
-            window.location.replace("https://kaspermockup.netlify.app/login");
+          if(data.message === "usercreated"){
+            window.location.replace("https://ant.design/");
           }
           setCredentials(data.message)
        })
@@ -51,6 +51,7 @@ function SignUp() {
         Sign Up
       </Button>
         <small className='errorMsg'>{credentails ? credentails : null}</small>
+            <a href='/'>Login</a>
       </Space>
     </div>
   );
