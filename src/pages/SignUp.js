@@ -25,7 +25,7 @@ function SignUp() {
        .then((response) => response.json())
        .then((data) => {
           if(data.message === "usercreated"){
-            window.location.replace("https://ant.design/");
+            window.location.replace("/home");
           }
           setCredentials(data.message)
        })
